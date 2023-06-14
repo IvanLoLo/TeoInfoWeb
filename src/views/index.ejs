@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>RFID Logistic</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+              rel="stylesheet"
+              integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+              crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <a href="#" class="navbar-brand mx-auto">Titulo</a>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mt-4 text-center">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Objeto</th>
+                            <th>Ubicacion</th>
+                            <th>Fecha</th>
+                        </tr>
+                        <tr>
+                            <% for(let i=0; i<data.length; i++){ %>
+                                <tr>
+                                    <td><%= data[i].ID%></td>
+                                    <td><%= data[i].Nombre%></td>
+                                    <td><%= data[i].Objeto%></td>
+                                    <td><%= data[i].Ubicacion%></td>
+                                    <td><%= data[i].Fecha_Hora%></td>
+                                </tr>
+                            <% } %>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="col-md-6 mt-4 card">
+                    <form action="/search" method="post" class="card-body">
+                        <h3 class="card-title">Busca</h3>
+                        <div class="form-group">
+                            <input type="text" name="id" class="form-control" placeholder="ID">
+                        </div>
+                        <input type="submit" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+</html>
